@@ -6,11 +6,8 @@ using System.Numerics;
 
 class Program
 {
-    static void Main(String[] args)
+    static void TaskA()
     {
-        string LineBreak = "\r\n";
-
-        // A - Method Overloading (W.I.C)
         Console.WriteLine("A - Method Overloading (W.I.C)");
         Printer p = new Printer("ABCDEFG", 3);
 
@@ -18,9 +15,11 @@ class Program
         p.Print(OverflowBehavior.Overflow);
         p.Print(OverflowBehavior.Clip);
         p.Print(OverflowBehavior.Ellipsis);
-        Console.WriteLine(LineBreak);
-
-        // B - Properties (W.I.C)
+    }
+    
+    static void TaskB() 
+    {
+        Console.WriteLine("B - Properties (W.I.C)");
         Rectangle r1 = new Rectangle(4f, 4f, Vector2.Zero);
         Rectangle r2 = new Rectangle(4f, 4f, new Vector2(4.1f, 4f));
 
@@ -33,5 +32,29 @@ class Program
             Console.WriteLine("The rectangles intersect.");
         else
             Console.WriteLine("The rectangles don't intersect.");
+    }
+
+    static void TaskC()
+    {
+        Console.WriteLine("C - Units, Combat, and the Beauty of RPGs");
+        Unit player = new Unit(10, 0, 0.3f, 2, 0.7f);
+        Unit enemy = new Unit(10, 0, 0.2f, 1, 0.5f);
+    }
+
+    static void Main(String[] args)
+    {
+        string LineBreak = "\r\n";
+
+        // A - Method Overloading (W.I.C)
+        TaskA();
+        Console.WriteLine(LineBreak);
+
+        // B - Properties (W.I.C)
+        TaskB();
+        Console.WriteLine(LineBreak);
+
+        // C - Units, Combat, and the Beauty of RPGs
+        TaskC();
+        Console.WriteLine(LineBreak);
     }
 }
