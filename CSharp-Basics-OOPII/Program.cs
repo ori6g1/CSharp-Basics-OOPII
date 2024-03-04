@@ -37,8 +37,8 @@ class Program
     static void TaskC()
     {
         Console.WriteLine("C - Units, Combat, and the Beauty of RPGs");
-        Unit player = new Unit(10, 0, 0.3f, 2, 0.7f);
-        Unit enemy = new Unit(10, 0, 0.2f, 1, 0.5f);
+        Game game = new Game();
+        game.StartGame();
     }
 
     static void Main(String[] args)

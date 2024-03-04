@@ -75,6 +75,11 @@ internal class Unit
             CurrentHP += CurrentHP + health;
     }
 
+    public void Heal()
+    {
+        CurrentHP = MaxHP;
+    }
+
     public bool IsDead()
     {
         if (CurrentHP <= 0)
