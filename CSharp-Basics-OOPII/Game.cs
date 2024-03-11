@@ -38,15 +38,16 @@ internal class Game
     {
         while (_player.CurrentHP > 0)
         {
+            PrintStats();
+            DoPlayerAction();
+            
             if (_enemy.CurrentHP <= 0)
             {
                 GenerateUpgradedEnemy();
                 UpgradePlayer();
             }
-
-            PrintStats();
-            DoPlayerAction();
-            EnemyAttack();
+            else
+                EnemyAttack();
         }
         PrintGameOver();
     }
@@ -92,9 +93,9 @@ internal class Game
 
     private void PrintStats()
     {
-        Console.WriteLine($"\tPlayer Stats:\r\n\tHP: {_player.CurrentHP}\r\n\tDamage: {_player.MainWeapon.Damage}" +
+        Console.WriteLine($"Player Stats:\r\n\tHP: {_player.CurrentHP}\r\n\tDamage: {_player.MainWeapon.Damage}" +
             $"\r\n\tShield: {_player.Armor.Shield}\r\n");
-        Console.WriteLine($"\tEnemy Stats:\r\n\tHP: {_enemy.CurrentHP}\r\n\tDamage: {_enemy.MainWeapon.Damage}" +
+        Console.WriteLine($"Enemy Stats:\r\n\tHP: {_enemy.CurrentHP}\r\n\tDamage: {_enemy.MainWeapon.Damage}" +
             $"\r\n\tShield: {_enemy.Armor.Shield}\r\n");
         Console.WriteLine("\r\n");
     }

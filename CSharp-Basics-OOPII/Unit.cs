@@ -64,7 +64,7 @@ internal class Unit
     public void ReceiveAttack(Weapon weapon)
     {
         if (Armor.Shield < weapon.Damage)
-            CurrentHP -= weapon.Damage - Armor.Shield;
+            CurrentHP -= (weapon.Damage - Armor.Shield);
     }
 
     public void Heal(int health)
@@ -72,7 +72,7 @@ internal class Unit
         if (CurrentHP + health >= MaxHP)
             CurrentHP = MaxHP;
         else
-            CurrentHP += CurrentHP + health;
+            CurrentHP += health;
     }
 
     public void Heal()
